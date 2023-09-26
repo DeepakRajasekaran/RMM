@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="description" content="a short description of your website" /><meta name="author" content="deepak" /><link rel="canonical" href="https://deepakrajasekaran.github.io/answers/" />
+      <link rel="shortcut icon" href="img/favicon.ico" />
+    <title>answers</title>
+    <link rel="stylesheet" href="css/theme.css" />
+    <link rel="stylesheet" href="css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Java_Numbers";
+        var mkdocs_page_input_path = "index.md";
+        var mkdocs_page_url = "/answers/";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/yaml.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="." class="icon icon-home"> answers
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="./search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href=".">Java_Numbers</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="index1/">Java_String</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href=".">answers</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">Java_Numbers</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <p>Here are Java programs for various tasks you've mentioned:</p>
+<ol>
+<li>Reverse an Integer:</li>
+</ol>
+<pre><code class="language-java">public class ReverseInteger {
+    public static void main(String[] args) {
+        int num = 12345;
+        int reversed = 0;
+
+        while (num != 0) {
+            int digit = num % 10;
+            reversed = reversed * 10 + digit;
+            num /= 10;
+        }
+
+        System.out.println(&quot;Reversed Integer: &quot; + reversed);
+    }
+}
+</code></pre>
+<ol>
+<li>Check Armstrong Number:</li>
+</ol>
+<pre><code class="language-java">public class ArmstrongNumber {
+    public static void main(String[] args) {
+        int num = 153;
+        int originalNum = num;
+        int sum = 0;
+
+        while (num != 0) {
+            int digit = num % 10;
+            sum += Math.pow(digit, 3);
+            num /= 10;
+        }
+
+        if (sum == originalNum) {
+            System.out.println(originalNum + &quot; is an Armstrong number.&quot;);
+        } else {
+            System.out.println(originalNum + &quot; is not an Armstrong number.&quot;);
+        }
+    }
+}
+</code></pre>
+<ol>
+<li>Check Prime Number:</li>
+</ol>
+<pre><code class="language-java">public class PrimeNumber {
+    public static void main(String[] args) {
+        int num = 29;
+        boolean isPrime = true;
+
+        if (num &lt;= 1) {
+            isPrime = false;
+        } else {
+            for (int i = 2; i &lt;= Math.sqrt(num); i++) {
+                if (num % i == 0) {
+                    isPrime = false;
+                    break;
+                }
+            }
+        }
+
+        if (isPrime) {
+            System.out.println(num + &quot; is a prime number.&quot;);
+        } else {
+            System.out.println(num + &quot; is not a prime number.&quot;);
+        }
+    }
+}
+</code></pre>
+<ol>
+<li>Fibonacci Series (Iteration):</li>
+</ol>
+<pre><code class="language-java">public class FibonacciIteration {
+    public static void main(String[] args) {
+        int n = 10;
+        int first = 0, second = 1;
+
+        System.out.print(&quot;Fibonacci Series: &quot;);
+
+        for (int i = 0; i &lt; n; i++) {
+            System.out.print(first + &quot; &quot;);
+            int next = first + second;
+            first = second;
+            second = next;
+        }
+    }
+}
+</code></pre>
+<ol>
+<li>Fibonacci Series (Recursion):</li>
+</ol>
+<pre><code class="language-java">public class FibonacciRecursion {
+    public static void main(String[] args) {
+        int n = 10;
+        System.out.print(&quot;Fibonacci Series: &quot;);
+        for (int i = 0; i &lt; n; i++) {
+            System.out.print(fibonacci(i) + &quot; &quot;);
+        }
+    }
+
+    public static int fibonacci(int n) {
+        if (n &lt;= 1) {
+            return n;
+        } else {
+            return fibonacci(n - 1) + fibonacci(n - 2);
+        }
+    }
+}
+</code></pre>
+<ol>
+<li>Check Palindrome (Iteration):</li>
+</ol>
+<pre><code class="language-java">public class PalindromeIteration {
+    public static void main(String[] args) {
+        int num = 12321;
+        int originalNum = num;
+        int reversed = 0;
+
+        while (num != 0) {
+            int digit = num % 10;
+            reversed = reversed * 10 + digit;
+            num /= 10;
+        }
+
+        if (originalNum == reversed) {
+            System.out.println(originalNum + &quot; is a palindrome.&quot;);
+        } else {
+            System.out.println(originalNum + &quot; is not a palindrome.&quot;);
+        }
+    }
+}
+</code></pre>
+<ol>
+<li>Check Palindrome (Recursion):</li>
+</ol>
+<pre><code class="language-java">public class PalindromeRecursion {
+    public static void main(String[] args) {
+        int num = 12321;
+        int originalNum = num;
+
+        if (isPalindrome(num, originalNum)) {
+            System.out.println(originalNum + &quot; is a palindrome.&quot;);
+        } else {
+            System.out.println(originalNum + &quot; is not a palindrome.&quot;);
+        }
+    }
+
+    public static boolean isPalindrome(int num, int originalNum) {
+        if (num == 0) {
+            return true;
+        }
+        int digit = num % 10;
+        return (digit == originalNum % 10) &amp;&amp; isPalindrome(num / 10, originalNum / 10);
+    }
+}
+</code></pre>
+<ol>
+<li>Find Greatest Among Three Integers:</li>
+</ol>
+<pre><code class="language-java">public class GreatestAmongThree {
+    public static void main(String[] args) {
+        int a = 10, b = 20, c = 5;
+        int greatest = a;
+
+        if (b &gt; greatest) {
+            greatest = b;
+        }
+
+        if (c &gt; greatest) {
+            greatest = c;
+        }
+
+        System.out.println(&quot;The greatest number is: &quot; + greatest);
+    }
+}
+</code></pre>
+<ol>
+<li>Sum of Digits Using Recursion:</li>
+</ol>
+<pre><code class="language-java">public class SumOfDigitsRecursion {
+    public static void main(String[] args) {
+        int num = 12345;
+        int sum = sumOfDigits(num);
+        System.out.println(&quot;Sum of digits of &quot; + num + &quot; is: &quot; + sum);
+    }
+
+    public static int sumOfDigits(int num) {
+        if (num == 0) {
+            return 0;
+        } else {
+            return num % 10 + sumOfDigits(num / 10);
+        }
+    }
+}
+</code></pre>
+<ol>
+<li>Swap Two Numbers Without Using Third Variable:</li>
+</ol>
+<pre><code class="language-java">public class SwapWithoutTemp {
+    public static void main(String[] args) {
+        int a = 5, b = 10;
+        a = a + b;
+        b = a - b;
+        a = a - b;
+        System.out.println(&quot;After swapping: a = &quot; + a + &quot;, b = &quot; + b);
+    }
+}
+</code></pre>
+<ol>
+<li>Swap Two Numbers Using Third Variable:</li>
+</ol>
+<pre><code class="language-java">public class SwapWithTemp {
+    public static void main(String[] args) {
+        int a = 5, b = 10;
+        int temp;
+        temp = a;
+        a = b;
+        b = temp;
+        System.out.println(&quot;After swapping: a = &quot; + a + &quot;, b = &quot; + b);
+    }
+}
+</code></pre>
+<ol>
+<li>Find Prime Factors:</li>
+</ol>
+<pre><code class="language-java">public class PrimeFactors {
+    public static void main(String[] args) {
+        int num = 36;
+        System.out.print(&quot;Prime factors of &quot; + num + &quot; are: &quot;);
+
+        for (int i = 2; i &lt;= num; i++) {
+            while (num % i == 0) {
+                System.out.print(i + &quot; &quot;);
+                num /= i;
+            }
+        }
+    }
+}
+</code></pre>
+<ol>
+<li>Add Two Integers Without Arithmetic Operator:</li>
+</ol>
+<pre><code class="language-java">public class AddWithoutArithmetic {
+    public static void main(String[] args) {
+        int a = 5, b = 10;
+        while (b != 0) {
+            int carry = a &amp; b;
+            a = a ^ b;
+            b = carry &lt;&lt; 1;
+        }
+        System.out.println(&quot;Sum: &quot; + a);
+    }
+}
+</code></pre>
+<ol>
+<li>Check for Perfect Number:</li>
+</ol>
+<pre><code class="language-java">public class PerfectNumber {
+    public static void main(String[] args) {
+        int num = 28;
+        int sum = 0;
+
+        for (int i = 1; i &lt; num; i++) {
+            if (num % i ==
+
+ 0) {
+                sum += i;
+            }
+        }
+
+        if (sum == num) {
+            System.out.println(num + &quot; is a perfect number.&quot;);
+        } else {
+            System.out.println(num + &quot; is not a perfect number.&quot;);
+        }
+    }
+}
+</code></pre>
+<ol>
+<li>Calculate Average of Integer Array:</li>
+</ol>
+<pre><code class="language-java">public class AverageOfArray {
+    public static void main(String[] args) {
+        int[] arr = { 10, 20, 30, 40, 50 };
+        int sum = 0;
+
+        for (int num : arr) {
+            sum += num;
+        }
+
+        double average = (double) sum / arr.length;
+        System.out.println(&quot;Average: &quot; + average);
+    }
+}
+</code></pre>
+<ol>
+<li>Calculate Average of Numbers Taken from User:</li>
+</ol>
+<pre><code class="language-java">import java.util.Scanner;
+
+public class AverageOfNumbers {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int n, sum = 0;
+
+        System.out.print(&quot;Enter the number of elements: &quot;);
+        n = scanner.nextInt();
+        int[] arr = new int[n];
+
+        System.out.println(&quot;Enter the elements:&quot;);
+        for (int i = 0; i &lt; n; i++) {
+            arr[i] = scanner.nextInt();
+            sum += arr[i];
+        }
+
+        double average = (double) sum / n;
+        System.out.println(&quot;Average: &quot; + average);
+
+        scanner.close();
+    }
+}
+</code></pre>
+<ol>
+<li>Calculate Factorial (Iterative):</li>
+</ol>
+<pre><code class="language-java">public class FactorialIterative {
+    public static void main(String[] args) {
+        int n = 5;
+        int factorial = 1;
+
+        for (int i = 1; i &lt;= n; i++) {
+            factorial *= i;
+        }
+
+        System.out.println(&quot;Factorial of &quot; + n + &quot; is: &quot; + factorial);
+    }
+}
+</code></pre>
+<ol>
+<li>Calculate Factorial (Recursive):</li>
+</ol>
+<pre><code class="language-java">public class FactorialRecursive {
+    public static void main(String[] args) {
+        int n = 5;
+        int factorial = factorial(n);
+        System.out.println(&quot;Factorial of &quot; + n + &quot; is: &quot; + factorial);
+    }
+
+    public static int factorial(int n) {
+        if (n == 0 || n == 1) {
+            return 1;
+        } else {
+            return n * factorial(n - 1);
+        }
+    }
+}
+</code></pre>
+<ol>
+<li>Check Even or Odd:</li>
+</ol>
+<pre><code class="language-java">public class EvenOrOdd {
+    public static void main(String[] args) {
+        int num = 7;
+        if (num % 2 == 0) {
+            System.out.println(num + &quot; is even.&quot;);
+        } else {
+            System.out.println(num + &quot; is odd.&quot;);
+        }
+    }
+}
+</code></pre>
+<ol>
+<li>Print First n Prime Numbers:</li>
+</ol>
+<pre><code class="language-java">public class FirstNPrimes {
+    public static void main(String[] args) {
+        int n = 10;
+        int count = 0;
+        int num = 2;
+
+        System.out.print(&quot;First &quot; + n + &quot; prime numbers: &quot;);
+
+        while (count &lt; n) {
+            boolean isPrime = true;
+
+            for (int i = 2; i &lt;= Math.sqrt(num); i++) {
+                if (num % i == 0) {
+                    isPrime = false;
+                    break;
+                }
+            }
+
+            if (isPrime) {
+                System.out.print(num + &quot; &quot;);
+                count++;
+            }
+
+            num++;
+        }
+    }
+}
+</code></pre>
+<ol>
+<li>Print Prime Numbers in a Given Range:</li>
+</ol>
+<pre><code class="language-java">public class PrimeInRange {
+    public static void main(String[] args) {
+        int start = 10;
+        int end = 50;
+
+        System.out.print(&quot;Prime numbers between &quot; + start + &quot; and &quot; + end + &quot;: &quot;);
+
+        for (int num = start; num &lt;= end; num++) {
+            if (isPrime(num)) {
+                System.out.print(num + &quot; &quot;);
+            }
+        }
+    }
+
+    public static boolean isPrime(int num) {
+        if (num &lt;= 1) {
+            return false;
+        }
+
+        for (int i = 2; i &lt;= Math.sqrt(num); i++) {
+            if (num % i == 0) {
+                return false;
+            }
+        }
+
+        return true;
+    }
+}
+</code></pre>
+<ol>
+<li>Find Smallest Number Among Three:</li>
+</ol>
+<pre><code class="language-java">public class SmallestAmongThree {
+    public static void main(String[] args) {
+        int a = 10, b = 5, c = 15;
+        int smallest = a;
+
+        if (b &lt; smallest) {
+            smallest = b;
+        }
+
+        if (c &lt; smallest) {
+            smallest = c;
+        }
+
+        System.out.println(&quot;The smallest number is: &quot; + smallest);
+    }
+}
+</code></pre>
+<ol>
+<li>Calculate Power Using <code>Math.pow</code> Method:</li>
+</ol>
+<pre><code class="language-java">public class PowerWithMathPow {
+    public static void main(String[] args) {
+        double base = 2;
+        double exponent = 3;
+        double result = Math.pow(base, exponent);
+        System.out.println(base + &quot; ^ &quot; + exponent + &quot; = &quot; + result);
+    }
+}
+</code></pre>
+<ol>
+<li>Calculate Power Without Using <code>Math.pow</code>:</li>
+</ol>
+<pre><code class="language-java">public class PowerWithoutMathPow {
+    public static void main(String[] args) {
+        double base = 2;
+        int exponent = 3;
+        double result = 1;
+
+        for (int i = 0; i &lt; exponent; i++) {
+            result *= base;
+        }
+
+        System.out.println(base + &quot; ^ &quot; + exponent + &quot; = &quot; + result);
+    }
+}
+</code></pre>
+<ol>
+<li>Calculate Square of a Number:</li>
+</ol>
+<pre><code class="language-java">public class SquareOfNumber {
+    public static void main(String[] args) {
+        double num = 5;
+        double square = num * num;
+        System.out.println(&quot;Square of &quot; + num + &quot; is: &quot; + square);
+    }
+}
+</code></pre>
+<ol>
+<li>Calculate Cube of a Number:</li>
+</ol>
+<pre><code class="language-java">public class CubeOfNumber {
+    public static void main(String[] args) {
+        double num = 3;
+        double cube = num * num * num;
+        System.out.println(&quot;Cube of &quot; + num + &quot; is: &quot; + cube);
+    }
+}
+</code></pre>
+<ol>
+<li>Calculate Square Root of a Number:</li>
+</ol>
+<pre><code class="language-java">public class SquareRootOfNumber {
+    public static void main(String[] args) {
+        double num = 16;
+        double squareRoot = Math.sqrt(num);
+        System.out.println(&quot;Square root of &quot; + num + &quot; is: &quot; + squareRoot);
+    }
+}
+</code></pre>
+<ol>
+<li>Calculate LCM of Two Numbers:</li>
+</ol>
+<pre><code class="language-java">public class LCM {
+    public static void main(String[] args) {
+        int num1 = 12;
+        int num2 = 18;
+        int gcd = findGCD(num1, num2);
+        int lcm = (num1 * num2) / gcd;
+        System.out.println(&quot;LCM of &quot; + num1 + &quot; and &quot; + num2 + &quot; is: &quot; + lcm);
+    }
+
+    public static int findGCD(int a, int b) {
+        if (b == 0) {
+            return a;
+        } else {
+            return findGCD(b, a % b);
+        }
+    }
+}
+</code></pre>
+<ol>
+<li>Find G</li>
+</ol>
+<p>CD (HCF) of Two Numbers:</p>
+<pre><code class="language-java">public class GCD {
+    public static void main(String[] args) {
+        int num1 = 12;
+        int num2 = 18;
+        int gcd = findGCD(num1, num2);
+        System.out.println(&quot;GCD of &quot; + num1 + &quot; and &quot; + num2 + &quot; is: &quot; + gcd);
+    }
+
+    public static int findGCD(int a, int b) {
+        if (b == 0) {
+            return a;
+        } else {
+            return findGCD(b, a % b);
+        }
+    }
+}
+</code></pre>
+<ol>
+<li>Check Leap Year:</li>
+</ol>
+<pre><code class="language-java">public class LeapYear {
+    public static void main(String[] args) {
+        int year = 2024;
+
+        if ((year % 4 == 0 &amp;&amp; year % 100 != 0) || (year % 400 == 0)) {
+            System.out.println(year + &quot; is a leap year.&quot;);
+        } else {
+            System.out.println(year + &quot; is not a leap year.&quot;);
+        }
+    }
+}
+</code></pre>
+<ol>
+<li>Convert Celsius to Fahrenheit:</li>
+</ol>
+<pre><code class="language-java">public class CelsiusToFahrenheit {
+    public static void main(String[] args) {
+        double celsius = 30;
+        double fahrenheit = (celsius * 9/5) + 32;
+        System.out.println(celsius + &quot;°C is equal to &quot; + fahrenheit + &quot;°F&quot;);
+    }
+}
+</code></pre>
+<ol>
+<li>Convert Fahrenheit to Celsius:</li>
+</ol>
+<pre><code class="language-java">public class FahrenheitToCelsius {
+    public static void main(String[] args) {
+        double fahrenheit = 86;
+        double celsius = (fahrenheit - 32) * 5/9;
+        System.out.println(fahrenheit + &quot;°F is equal to &quot; + celsius + &quot;°C&quot;);
+    }
+}
+</code></pre>
+<ol>
+<li>Calculate Simple Interest:</li>
+</ol>
+<pre><code class="language-java">public class SimpleInterest {
+    public static void main(String[] args) {
+        double principal = 1000;
+        double rate = 5;
+        double time = 2;
+        double simpleInterest = (principal * rate * time) / 100;
+        System.out.println(&quot;Simple Interest: &quot; + simpleInterest);
+    }
+}
+</code></pre>
+<p>These are the Java programs for the tasks you mentioned. You can copy and paste them into your Java development environment to run and test them.</p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="index1/" class="btn btn-neutral float-right" title="Java_String">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+    
+      <span><a href="index1/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = ".";</script>
+    <script src="js/theme_extra.js"></script>
+    <script src="js/theme.js"></script>
+      <script src="search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
+
+<!--
+MkDocs version : 1.5.3
+Build Date UTC : 2023-09-26 04:43:42.965567+00:00
+-->
